@@ -1,0 +1,8 @@
+{% extends 'base.html' %} 
+{% block maincontent %}
+ <form action=""method="post">{% csrf_token %}
+ <p>¿Esta seguro que desea eliminar el paciente con la identificacion <strong>"{{ object.identificacion }}"</strong>?</p>
+ <input type="submit" value="Aceptar" />
+ <a class='btn'href="{% url 'personas-lista' %}">Cancelar</a>
+ </form>
+{% endblock maincontent %}

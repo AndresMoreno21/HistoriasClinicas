@@ -1,0 +1,9 @@
+{% extends 'baseAdmin.html' %}
+
+{% block maincontent %}
+    <form action="" method="post">{% csrf_token %}
+        <p>Desea Borrar La historia de Terapia Ocupacional  de {{ object.paciente }}?</p>
+        <input type="submit" value="Confirmar" />
+        <a class='btn' href="{% url 'terapia-lista' %}">Cancelar</a>
+    </form>
+{% endblock maincontent %}

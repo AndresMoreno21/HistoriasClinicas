@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags%}
+
+ {% block section %}
+ <h2>Crear nueva historia de Neuropsicologia</h2><br>
+ {% endblock section %}
+
+{% block maincontent %}
+
+    <form enctype="multipart/form-data" method="post">{% csrf_token %}
+
+   
+        {{ form|crispy }}
+      
+
+       
+        
+        <button type="submit">Guardar</button>
+        <a class='btn' href="{% url 'adulto-lista' %}">Cancelar</a>        
+          
+        
+    </form>
+{% endblock maincontent%}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block maincontent %}
+    <form action="" method="post">{% csrf_token %}
+        <p>Desea Borrar La historia de Psiquiatria de {{ object.paciente }}?</p>
+        <input type="submit" value="Confirmar" />
+        <a class='btn' href="{% url 'psiquiatria-lista' %}">Cancelar</a>
+    </form>
+{% endblock maincontent %}

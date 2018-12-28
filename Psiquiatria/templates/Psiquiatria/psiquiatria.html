@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block section %}
+    <h2>Lista de historias Psiquiatria</h2>
+    <hr>
+{% endblock section %}
+
+{% block maincontent %}
+    <div class="row well">
+        {% for p in psiquiatria_list.all %}
+            <div class="col-md-4 well">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ p.paciente }}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <a href="{% url 'psiquiatria-detail' p.id %}">
+                            
+                        </a>
+                         
+                    </div>
+
+                
+                    <div class="panel-footer">
+                            <a class='btn btn-warning' href="{% url "psiquiatria-update" p.id %}">Editar</a>
+                            <a class='btn btn-danger' href="{% url "psiquiatria-delete" p.id %}">Eliminar</a>
+                    </div>
+                   
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock maincontent %}

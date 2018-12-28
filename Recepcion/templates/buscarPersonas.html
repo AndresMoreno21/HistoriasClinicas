@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block section %}
+    <h2>Posibles resultados de la busqueda: </h2>
+    
+{% endblock section %}
+
+{% block maincontent %}
+
+
+{% for identificacion in id %}
+
+        <div class="col-md-10 well">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title" >{{ identificacion.primer_nombre}} {{identificacion.primer_apellido}} {{identificacion.segundo_apellido}}</h3>
+                </div>
+
+                <div class="panel-body">
+                        <div class="panel-body">
+                                <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Identificacion</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellido</th>
+                                        <th scope="col">Sexo</th>
+                                        <th scope="col">Servicio</th>
+                                         
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">1</th>
+                                        <td><strong>{{ identificacion.identificacion}}</strong></td>
+                                        <td>{{ identificacion.primer_nombre}}</td>
+                                        <td>{{ identificacion.primer_apellido}}</td>
+                                        <td>{{ identificacion.sexo}}</td>
+                                        <td>{{ identificacion.servicio_solicitado}}</td>
+                                        
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                            </div>
+                </div>
+              
+
+                <div class="panel-body">
+                    <a class="btn btn-success" href="{% url 'persona-update' identificacion.id %}">Ver informacion</a>
+                    <a class="btn btn-danger" href="{% url 'persona-delete' identificacion.id %}">Eliminar</a>
+                </div>
+    </div>
+
+    <a class="btn btn-info" href="{% url 'personas-lista' %}">Volver</a>
+
+</div>
+{% endfor %}
+
+
+
+{% endblock maincontent %}
+

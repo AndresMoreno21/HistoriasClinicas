@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block section %}
+    <h2>Lista de clientes con una Historia de Neuropsicologia</h2>
+    <hr>
+{% endblock section %}
+
+{% block maincontent %}
+<div class="row well">
+    {% for p in neuro_list.all %}
+        <div class="col-md-4 well">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title" >{{ p.Historia_No}}</h3>
+                </div>
+
+                <div class="panel-body">
+                   <h3> Datos</h3>
+                </div>
+              
+
+                <div class="panel-body">
+                    <a class="btn btn-success" href="{% url 'neuro-update' p.id %}">Editar</a>
+                </div>
+    </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock maincontent %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block section %}
+    <h2>Posibles resultados de la busqueda: </h2>
+    
+{% endblock section %}
+
+{% block maincontent %}
+
+
+{% for niño in id %}
+
+        <div class="col-md-10 well">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title" >{{ niño.primer_nombre}} {{niño.primer_apellido}} {{niño.segundo_apellido}}</h3>
+                </div>
+
+                <div class="panel-body">
+                        <div class="panel-body">
+                                <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Identificacion</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellido</th>
+                                        <th scope="col">Sexo</th>
+                                        <th scope="col">Servicio</th>
+                                        <th scope="col">Motivo de consulta</th> 
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">1</th>
+                                        <td><strong>{{ niño.identificacion}}</strong></td>
+                                        <td>{{ niño.primer_nombre}}</td>
+                                        <td>{{ niño.primer_apellido}}</td>
+                                        <td>{{ niño.sexo}}</td>
+                                        <td>{{ niño.servicio_solicitado}}</td>
+                                        <td>{{ niño.motivo_consulta}}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                            </div>
+                </div>
+              
+
+                <div class="panel-body">
+                    <a class="btn btn-success" href="{% url 'niño-update' niño.id %}">Ver informacion</a>
+                    <a class="btn btn-danger" href="{% url 'persona-delete' niño.id %}">Eliminar</a>
+                </div>
+    </div>
+
+    <a class="btn btn-info" href="{% url 'niño-lista' %}">Volver</a>
+
+</div>
+{% endfor %}
+
+
+
+{% endblock maincontent %}

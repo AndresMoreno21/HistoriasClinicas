@@ -1,0 +1,215 @@
+{% extends "baseAdmin.html" %}
+{% load crispy_forms_tags%}
+
+ {% block section %}
+ <h2>Apertura Adulto</h2><br>
+ {% endblock section %}
+
+{% block content %}
+
+<form method="post" enctype="multipart/form-data" >{% csrf_token %}
+		<div class="card">
+			
+			<div class="card-header card-header-icon" data-background-color="rose">
+				<i class="material-icons">accessibility</i>
+			</div>
+			
+			<div class="card-content">
+				
+				<div class="card">
+					
+					<div class="card-header">
+						<h4 class="card-title">Formulario de registro para un <strong>paciente adulto.</strong>
+							
+						</h4>
+					</div>
+					
+					<div class="card-content">
+						<div class="row">
+							<div class="col-md-4">
+								<ul class="nav nav-pills nav-pills-icons nav-pills-rose nav-stacked" role="tablist">
+									<!--color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"-->
+									<li class="active">
+										<a href="#datos" role="tab" data-toggle="tab">
+											<i class="material-icons">account_circle</i> Datos generales
+										</a>
+									</li>
+									<li>
+										<a href="#hc" role="tab" data-toggle="tab">
+											<i class="material-icons">library_books</i> Historia Medica
+										</a>
+									</li>
+									<li>
+										<a href="#he" role="tab" data-toggle="tab">
+											<i class="material-icons">transfer_within_a_station</i> Habitos y estilo de vida
+										</a>
+									</li>
+									<li>
+										<a href="#ao" role="tab" data-toggle="tab">
+											<i class="material-icons">work</i> Area Laboral u Ocupacional
+										</a>
+									</li>
+									<li>
+										<a href="#hs" role="tab" data-toggle="tab">
+											<i class="material-icons">supervised_user_circle</i> Historia Sociofamiliar
+										</a>
+									</li>
+								</ul>
+							</div>
+							
+							<div class="col-md-8">
+								<div class="tab-content">
+									<div class="tab-pane active" id="datos">
+										<h6>identificacion</h6>
+										{{ form.identificacion}}
+										
+										<h6>primer nombre</h6>
+										{{ form.primer_nombre}}
+										
+										<h6>segundo nombre</h6>
+										{{ form.segundo_nombre}}
+										
+										<h6>primer apellido</h6>
+										{{ form.primer_apellido}}
+										
+										<h6>segundo apellido</h6>
+										{{ form.segundo_apellido}}
+										
+										<h6>Sexo</h6>
+										{{ form.sexo}}
+										
+										<h6>Lugar de nacimiento</h6>
+										{{ form.lugar_nacimiento}}
+										
+										<h6>telefono</h6>
+										{{ form.telefono}}
+										
+										<h6>direccion</h6>
+										{{ form.direccion}}
+										
+										<h6>correo</h6>
+										{{ form.correo}}
+										
+										<h6>eps</h6>
+										{{ form.eps_afiliada}}
+										
+										<h6>Fecha de ingreso</h6>
+										{{ form.ingreso}}
+										
+										<h6>nivel educativo</h6>
+										{{ form.nivel_educativo}}
+										
+										<h6>Servicio solicitado</h6>
+										{{ form.servicio_solicitado}}
+										
+										<h6>Remitido Por</h6>
+										{{ form.remitido_por}}
+										
+										<h6>Motivo de la consulta</h6>
+										{{ form.motivo_consulta}}
+									</div>
+									
+									<div class="tab-pane" id="hc">
+										<div class="form-group label-floating">
+											<div class="panel-heading" role="tab" id="headingOne">
+												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#socio" aria-expanded="true" aria-controls="collapseOne">
+													<h4 class="panel-title">
+														Historia Medica
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="socio" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+												<div class="panel-body">
+													{{ form.historias_medicas|as_crispy_field}}
+													
+												</div>
+											</div>
+										</div>
+										
+										<h6>Diagnostico Actual</h6>
+										{{form.diagnostico_actual}}
+										
+										<h6>Medicamentos</h6>
+										{{form.medicamentos}}
+										
+										<h6>Estado actual de la enfermedad o transtorno</h6>
+										{{form.estado_actual_enfermedad}}
+										
+										<h6>Tratamiento actual</h6>
+										{{form.tratamiendo_actual}}
+										
+										<h6>Antecedentes familiares de enfermedades</h6>
+										{{form.antecedentes}}
+										
+									</div>
+									
+									<div class="tab-pane" id="he">
+										<div class="form-group label-floating">
+											<div class="panel-heading" role="tab" id="headingOne">
+												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#socio" aria-expanded="true" aria-controls="collapseOne">
+													<h4 class="panel-title">
+														Habitos y Estilo de vida
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="socio" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+												<div class="panel-body">
+													{{ form.habitos_estilo_vida|as_crispy_field}}
+													
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="tab-pane" id="ao">
+										<div class="form-group label-floating">
+											<div class="panel-heading" role="tab" id="headingOne">
+												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#socio" aria-expanded="true" aria-controls="collapseOne">
+													<h4 class="panel-title">
+														Area Laboral u Ocupacional
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="socio" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+												<div class="panel-body">
+													{{ form.area_labor|as_crispy_field}}
+													
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="tab-pane" id="hs">
+										<div class="form-group label-floating">
+											<div class="panel-heading" role="tab" id="headingOne">
+												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#socio" aria-expanded="true" aria-controls="collapseOne">
+													<h4 class="panel-title">
+														Historia Sociofamiliar
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="socio" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+												<div class="panel-body">
+													{{ form.sociofamiliar|as_crispy_field}}
+													
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-success">Enviar</button>
+		<a href="{% url 'adulto-lista' %}" class="btn btn-danger">Cancelar</a>
+	</form>
+{% endblock content%}

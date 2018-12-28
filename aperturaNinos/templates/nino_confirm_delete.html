@@ -1,0 +1,26 @@
+{% extends 'baseAdmin.html' %} 
+{% block content %}
+
+<form action=""method="post">{% csrf_token %}
+   
+        <div class="modal-dialog modal-small ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                </div>
+                <div class="modal-body text-center">
+                    <h5>¿Esta seguro que desea eliminar el paciente? </h5><br>
+                    <h5>Identificacion: <strong>{{ object.identificacion }}</strong></h5>
+                    <h5>Nombre: {{object.primer_nombre}}</h5>
+                    <h5>Apellido: {{object.primer_apellido}}</h5>
+                </div>
+                <div class="modal-footer text-center">
+                    <input  class="btn btn-danger btn-simple" type="submit" value="Aceptar" />
+                    <a href="{% url 'nino-lista' %}" class="btn btn-success btn-simple">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    
+</form>
+
+{% endblock content %}

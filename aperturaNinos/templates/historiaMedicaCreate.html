@@ -1,0 +1,95 @@
+{% extends "baseAdmin.html" %}
+{% load crispy_forms_tags%}
+
+ {% block section %}
+ <h2>Apertura Adulto</h2><br>
+ {% endblock section %}
+
+{% block maincontent %}
+
+<div class="card">
+        <div class="card-header card-header-icon" data-background-color="rose">
+            <i class="material-icons">face</i>
+        </div>
+        
+        <div class="card-content">
+                <h4 class="card-title"><strong>Agregar nuevo paciente Adulto</strong></h4>
+                <form method="post" enctype="multipart/form-data" >{% csrf_token %}
+                    <div class="form-group label-floating">
+                        <h4 class="card-title"><strong>Seleccionar paciente</strong></h4>
+                        <select class="selectpicker" data-style="btn btn-primary btn-round" title="Ninguno seleccionado" >
+                        {% for pacientes in form.paciente %}
+                            <option >{{pacientes }}}</option>
+                        {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group label-floating">
+                        <h4 class="card-title"><strong>Seleccionar EPS afialada</strong></h4>
+                        <select class="selectpicker" data-style="btn btn-primary btn-round"  title="Ninguno seleccionado" >
+                        {% for eps in form.eps_afiliada %}
+                            <option >{{eps }}</option>
+                        {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group label-floating">
+                        <h4 class="card-title"><strong>Hora y Fecha de ingreso</strong></h4>
+                        <div class="form-group">
+                                
+                            <input type="text" class="form-control datepicker" value="10/10/2016" />
+                        </div>
+                    </div>
+                    <div class="form-group label-floating">
+                        <h4 class="card-title"><strong>Nivel educativo</strong></h4>
+                        <select class="selectpicker" data-style="btn btn-primary btn-round" title="Single Select" data-size="7">
+                        {% for educacion in form.nivel_educativo %}
+                            <option >{{ educacion }}}</option>
+                        {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group label-floating">
+                        <h4 class="card-title"><strong>¿Quien remite al paciente?</strong></h4>
+                        {{ form.remitido_por}}
+                    </div>
+                    <div class="form-group label-floating">
+                        <h4 class="card-title"><strong>¿Cual es el motivo de la consulta?</strong></h4>
+                        {{ form.motivo_consulta}}
+                    </div>
+                    <div class="form-group label-floating">
+                        <h4 class="card-title"><strong>Historias Medicas</strong></h4>
+                        {{form.historias_medicas|as_crispy_field}}
+                    </div>
+                    <div class="form-group label-floating">
+                            <h4 class="card-title"><strong>Diagnostico Actual</strong></h4>
+                            {{form.diagnostico_actual}}
+                    </div>
+                    <div class="form-group label-floating">
+                            <h4 class="card-title"><strong>Estado actual de la enfermedad</strong></h4>
+                            {{form.estado_actual_enfermedad}}
+                    </div>
+                    <div class="form-group label-floating">
+                            <h4 class="card-title"><strong>Tratamiento actual</strong></h4>
+                            {{form.tratamiendo_actual}}
+                    </div>
+                    <div class="form-group label-floating">
+                            <h4 class="card-title"><strong>Antecedentes</strong></h4>
+                            {{form.antecedentes}}
+                    </div>
+                    <div class="form-group label-floating">
+                            <h4 class="card-title"><strong>Habitos y estilo de vida</strong></h4>
+                            {{form.habitos_estilo_vida|as_crispy_field}}
+                    </div>
+                    <div class="form-group label-floating">
+                            <h4 class="card-title"><strong>Area Laboral</strong></h4>
+                            {{form.area_labor|as_crispy_field}}
+                    </div>
+                    <div class="form-group label-floating">
+                            <h4 class="card-title"><strong>Area SocioFamiliar</strong></h4>
+                            {{form.sociofamiliar|as_crispy_field}}
+                    </div>
+    
+                    <button type="submit" class="btn btn-success">Enviar</button>
+                    <a href="{% url 'adulto-lista' %}" class="btn btn-danger">Cancelar</a>
+                </form>
+            </div>
+        </div>
+{% endblock maincontent%}
