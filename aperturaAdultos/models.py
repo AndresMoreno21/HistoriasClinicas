@@ -128,14 +128,12 @@ class AperturaAdultos(models.Model):
     area_labor = MultiSelectField(choices = AREA_CHOICES)
     sociofamiliar = MultiSelectField(choices = SOCIO_CHOICES)
     
-    
-
+    def __str__(self):
+        return  self.identificacion + " - " +  self.primer_nombre + " " +  self.primer_apellido
+        
     def get_absolute_url(self):
         return reverse('adulto-lista')
         
-
-    def __str__(self):
-        return self.identificacion
 
 
     

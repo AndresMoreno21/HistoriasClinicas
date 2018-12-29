@@ -1,13 +1,6 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.db import models
 from django.urls import reverse
 from multiselectfield import MultiSelectField
-
-# Create your models here.
-
-
 
 ANTECEDENTES_EMBARAZO =(
 		('CONTROL MEDICO','Control Medico'),
@@ -184,9 +177,9 @@ SEXO_CHOICES = (
 )
 
 class HistoriaNiño(models.Model):
-
-	tipo_identificacion = models.CharField(max_length=50, choices = TIPO_IDENTIFICACION)	
+	
 	identificacion = models.CharField(max_length=50)
+	tipo_identificacion = models.CharField(max_length=50, choices = TIPO_IDENTIFICACION)
 	primer_nombre = models.CharField(max_length = 50)
 	segundo_nombre = models.CharField(max_length = 50, blank=True)
 	primer_apellido = models.CharField(max_length = 50)
@@ -238,7 +231,7 @@ class HistoriaNiño(models.Model):
 	historia_socio_familiar = MultiSelectField(choices = HISTORIA_SOCIOFAMILIAR_CHOICES)
 
 	def __str__(self):
-		return self.tipo_identificacion
+		return  self.identificacion + " - " +  self.primer_nombre + " " +  self.primer_apellido
 
 	def get_absolute_url(self):
 		return reverse('nino-lista')

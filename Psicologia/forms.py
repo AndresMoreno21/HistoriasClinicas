@@ -8,6 +8,8 @@ class PsicologiaForm(forms.ModelForm):
         widgets = {
 
         'fecha': forms.DateInput(attrs={'class':'form-control datepicker' }),
+        'pacienteAdulto': forms.Select(attrs={'class':'selectpicker'}),
+        'pacienteNiño': forms.Select(attrs={'class':'selectpicker'}),
         'motivo_consulta': forms.TextInput(attrs={'class':'form-control'}),
         'percepcion_paciente': forms.TextInput(attrs={'class':'form-control'}),
         'sintomas': forms.TextInput(attrs={'class':'form-control'}),

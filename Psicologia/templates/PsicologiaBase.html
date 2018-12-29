@@ -1,11 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'baseAdmin.html' %}
 
-{% block section %}
-    <h2>Lista de pacientes con una Historia de Pscicologia</h2>
-    <hr>
-{% endblock section %}
 
-{% block maincontent %}
+{% block content %}
 <div class="row well">
     {% for p in psico_list.all %}
         <div class="col-md-4 well">
@@ -26,4 +22,4 @@
         </div>
     {% endfor %}
 </div>
-{% endblock maincontent %}
+{% endblock content %}

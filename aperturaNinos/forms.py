@@ -52,6 +52,7 @@ class MenorForm(forms.ModelForm):
             'diagnostico_actual': forms.Textarea(attrs={'class':'form-control'}),
             
             'tipo_identificacion': forms.Select(attrs={'class':'selectpicker'}),
+            
             'servicio_solicitado' : forms.Select(attrs={'class':'selectpicker'}),
             'sexo' : forms.Select(attrs={'class':'selectpicker'}),
             'eps' : forms.Select(attrs={'class':'selectpicker'}),

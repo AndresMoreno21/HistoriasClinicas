@@ -78,40 +78,21 @@
                     <div class="collapse" id="Recepcion">
                         <ul class="nav">
                             
-                            <div class="collapse" id="historias">
-                                <ul class="nav">
-                                    
-                                    <li>
-                                        <a href="{% url 'adulto-create' %}">Apertura Adultos</a>
-                                    </li>
-                                    <li>
-                                        <a href="{% url 'nino-create' %}">Apertura Niños</a>
-                                    </li>
-                                    <li>
-                                        <a href="{% url 'adulto-lista' %}">Lista de pacientes <b>Adultos</b></a>
-                                    </li>
-                                    <li>
-                                        <a href="{% url 'nino-lista' %}">Lista de pacientes <br>
-                                            <b>Niños</b></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                
-                                <li>
-                                    <a href="{% url 'adulto-create' %}">Apertura Adultos</a>
+                            <li>
+                                <a href="{% url 'adulto-create' %}">Apertura Adultos</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'nino-create' %}">Apertura Niños</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'adulto-lista' %}">Lista de pacientes <b>Adultos</b></a>
+                            </li>
+                            <li>
+                                <a href="{% url 'nino-lista' %}">Lista de pacientes <br>
+                                    <b>Niños</b></a>
                                 </li>
-                                <li>
-                                    <a href="{% url 'nino-create' %}">Apertura Niños</a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'adulto-lista' %}">Lista de pacientes <b>Adultos</b></a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'nino-lista' %}">Lista de pacientes <br>
-                                        <b>Niños</b></a>
-                                    </li>
-                                </ul>
-                            </div>
+                            </ul>
+                            
                         </li>
                         
                         {% if perms.TerapiaOcupacional.add_terapiaocupacional  %}
@@ -654,6 +635,9 @@
                             "pagingType": "full_numbers",
                             responsive: true,
                             language: {
+                                infoEmpty: "No existen pacientes registrados.",
+                                emptyTable: "Ningun paciente ha sido agregado. Por favor diligencie una apertura primero.",
+                                infoFiltered: " - Filtrado de _MAX_ resultados",
                                 search: "_INPUT_",
                                 searchPlaceholder: "Buscar",
                                 info: "Mostrando _START_ de _END_ pacientes - Numero de pacientes: _TOTAL_ ",

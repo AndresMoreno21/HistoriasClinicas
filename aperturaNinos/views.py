@@ -25,15 +25,16 @@ class NiñoCreate(LoginRequiredMixin,CreateView):
     success_url = reverse_lazy('nino-lista')
 
 class NiñoUpdate(LoginRequiredMixin,UpdateView):
-	model = HistoriaNiño
-	template_name = 'ninoDetalles.html'
-	fields= '__all__'
-
+    model = HistoriaNiño
+    template_name = 'ninoDetalles.html'
+    fields= '__all__'
+    success_url = reverse_lazy('nino-lista')
 
 class NiñoDelete(LoginRequiredMixin, DeleteView):
     model = HistoriaNiño
     template_name = 'nino_confirm_delete.html'
     fields='__all__'
+    success_url = reverse_lazy('nino-lista')
 
 
 class Buscar(LoginRequiredMixin,TemplateView):

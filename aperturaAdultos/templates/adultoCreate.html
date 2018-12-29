@@ -2,15 +2,7 @@
 	{% load crispy_forms_tags%}
 	{% load static %}
 	
-	
-	{% block section %}
-	<h2>Crear nueva Apertura Adulto</h2><br>
-	{% endblock section %}
-	
-	
 	{% block content %}
-	
-	
 	
 	<form method="post" enctype="multipart/form-data" >{% csrf_token %}
 		<div class="card">
@@ -20,35 +12,35 @@
 			</div>
 			
 			<div class="card-content">
-
+				
 				<ul class="nav nav-pills nav-pills-info">
-							<!--color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"-->
-							<li class="active">
-								<a href="#datos" role="tab" data-toggle="tab">
-									<i class="material-icons">account_circle</i> Datos generales
-								</a>
-							</li>
-							<li>
-								<a href="#hc" role="tab" data-toggle="tab">
-									<i class="material-icons">library_books</i> Historia Medica
-								</a>
-							</li>
-							<li>
-								<a href="#he" role="tab" data-toggle="tab">
-									<i class="material-icons">transfer_within_a_station</i> Habitos y estilo de vida
-								</a>
-							</li>
-							<li>
-								<a href="#ao" role="tab" data-toggle="tab">
-									<i class="material-icons">work</i> Area Laboral u Ocupacional
-								</a>
-							</li>
-							<li>
-								<a href="#hs" role="tab" data-toggle="tab">
-									<i class="material-icons">supervised_user_circle</i> Historia Sociofamiliar
-								</a>
-							</li>
-						</ul>
+					<!--color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"-->
+					<li class="active">
+						<a href="#datos" role="tab" data-toggle="tab">
+							<i class="material-icons">account_circle</i> Datos generales
+						</a>
+					</li>
+					<li>
+						<a href="#hc" role="tab" data-toggle="tab">
+							<i class="material-icons">library_books</i> Historia Medica
+						</a>
+					</li>
+					<li>
+						<a href="#he" role="tab" data-toggle="tab">
+							<i class="material-icons">transfer_within_a_station</i> Habitos y estilo de vida
+						</a>
+					</li>
+					<li>
+						<a href="#ao" role="tab" data-toggle="tab">
+							<i class="material-icons">work</i> Area Laboral u Ocupacional
+						</a>
+					</li>
+					<li>
+						<a href="#hs" role="tab" data-toggle="tab">
+							<i class="material-icons">supervised_user_circle</i> Historia Sociofamiliar
+						</a>
+					</li>
+				</ul>
 				
 				<div class="card">
 					
@@ -209,11 +201,45 @@
 						</div>
 						
 					</div>
+					<div class="card-content">
+					<ul class="nav nav-pills nav-pills-warning">
+						<!--color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"-->
+						<li class="active">
+							<a href="#datos" role="tab" data-toggle="tab">
+								 Datos generales
+							</a>
+						</li>
+						<li>
+							<a href="#hc" role="tab" data-toggle="tab">
+								 Historia Medica
+							</a>
+						</li>
+						<li>
+							<a href="#he" role="tab" data-toggle="tab">
+								 Habitos y estilo de vida
+							</a>
+						</li>
+						<li>
+							<a href="#ao" role="tab" data-toggle="tab">
+								 Area Laboral u Ocupacional
+							</a>
+						</li>
+						<li>
+							<a href="#hs" role="tab" data-toggle="tab">
+								 Historia Sociofamiliar
+							</a>
+						</li>
+					</ul>
+					</div>
 				</div>
+				
+			</div>
+			<div  class="card-content" >
+			<button type="submit" class="btn btn-success">Enviar</button>
+			<a href="{% url 'adulto-lista' %}" class="btn btn-danger">Cancelar</a>
 			</div>
 		</div>
-		<button type="submit" class="btn btn-success">Enviar</button>
-		<a href="{% url 'adulto-lista' %}" class="btn btn-danger">Cancelar</a>
+		
 	</form>
 	
-{% endblock content%}
+	{% endblock content%}
