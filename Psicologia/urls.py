@@ -12,6 +12,7 @@ urlpatterns = [
   
 	path('Psicologia/',views.psico_base,name='psico-lista'),
     path('Psicologia/<int:pk>/detalles',views.PsicologiaUpdate.as_view(),name='psico-update'),
+    path('Psicologia/<int:pk>/eliminar',views.PsicologiaDelete.as_view(),name='psico-delete'),
     path('Psicologia/crearHistoriaPsico',views.PsicologiaCreate.as_view(),name='psico-create'),
     
 

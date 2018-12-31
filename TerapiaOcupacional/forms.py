@@ -6,7 +6,8 @@ class TerapiaForm(forms.ModelForm):
         model = TerapiaOcupacional
         fields= '__all__'
         widgets = {
-            'paciente': forms.Select(attrs={'class':'selectpicker'}),
+            'pacienteAdulto': forms.Select(attrs={'class':'selectpicker'}),
+            'pacienteNiño': forms.Select(attrs={'class':'selectpicker'}),
             'movimientos_activos_y_pasivos': forms.Select(attrs={'class':'selectpicker'}),
             'cintura_escapular': forms.Select(attrs={'class':'selectpicker'}),
             'cadera': forms.Select(attrs={'class':'selectpicker'}),

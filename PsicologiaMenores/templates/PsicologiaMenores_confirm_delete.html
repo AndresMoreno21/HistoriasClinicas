@@ -10,13 +10,13 @@
                 </div>
                 <div class="modal-body text-center">
                     <h5>¿Esta seguro que desea eliminar el paciente? </h5><br>
-                    <h5>Identificacion: <strong>{{ object.pacienteAdulto.identificacion }}</strong></h5>
-                    <h5>Nombre: {{object.pacienteAdulto.primer_nombre}}</h5>
-                    <h5>Apellido: {{object.pacienteAdulto.primer_apellido}}</h5>
+                    <h5>Identificacion: <strong>{{ object.pacienteNiño.identificacion }}</strong></h5>
+                    <h5>Nombre: {{object.pacienteNiño.primer_nombre}}</h5>
+                    <h5>Apellido: {{object.pacienteNiño.primer_apellido}}</h5>
                 </div>
                 <div class="modal-footer text-center">
                     <input  class="btn btn-danger btn-simple" type="submit" value="Aceptar" />
-                    <a href="{% url 'psico-lista' %}" class="btn btn-success btn-simple">Cancelar</a>
+                    <a href="{% url 'psicoMenor-lista' %}" class="btn btn-success btn-simple">Cancelar</a>
                 </div>
             </div>
         </div>

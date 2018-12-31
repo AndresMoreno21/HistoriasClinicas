@@ -22,12 +22,15 @@ class PsicologiaCreate(LoginRequiredMixin,CreateView):
     template_name = 'PsicologiaCreate.html'
     success_url = reverse_lazy('psico-lista')
 
-
-
 class PsicologiaUpdate(LoginRequiredMixin,UpdateView):
     model = Psicologia
     form_class = forms.PsicologiaForm
     template_name = 'PsicologiaDetalles.html'
+    success_url = reverse_lazy('psico-lista')
+
+class PsicologiaDelete(LoginRequiredMixin, DeleteView):
+    model = Psicologia
+    template_name = 'Psicologia_confirm_delete.html'
     success_url = reverse_lazy('psico-lista')
 
 

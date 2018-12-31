@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from multiselectfield import MultiSelectField
 from aperturaAdultos.models import AperturaAdultos
+from aperturaNinos.models import HistoriaNiño
 
 ALTERADO_NORMAL_CHOICES = (
 
@@ -32,10 +33,13 @@ PRUEBAS_APLICADAS_CHOICES = (
     ('OBSERVACIONES CLINCIAS I.S', 'OBSERVACIONES CLINCIAS I.S'),
     ('SIPT', 'SIPT'),
 )
+
     
 class TerapiaOcupacional(models.Model):
     
-    paciente = models.ForeignKey(AperturaAdultos, on_delete=models.CASCADE)
+    pacienteAdulto = models.ForeignKey(AperturaAdultos, on_delete=models.CASCADE, blank=True , null=True)
+    pacienteNiño = models.ForeignKey(HistoriaNiño, on_delete=models.CASCADE, blank=True , null=True)
+    
     movimientos_activos_y_pasivos = models.CharField(max_length=20, choices = ALTERADO_NORMAL_CHOICES)
     cintura_escapular = models.CharField(max_length=20, choices = ALTERADO_NORMAL_CHOICES, help_text = "Hombros")
     cadera = models.CharField(max_length=20, choices = ALTERADO_NORMAL_CHOICES, help_text = "Pelvis")

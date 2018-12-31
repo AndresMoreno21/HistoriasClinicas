@@ -1,15 +1,12 @@
 from django.db import models
 from django.urls import reverse
 from aperturaAdultos.models import AperturaAdultos
-from aperturaNinos.models import HistoriaNiño
+
 
 
 class Psicologia(models.Model):    
     
     pacienteAdulto = models.ForeignKey(AperturaAdultos, on_delete=models.CASCADE)
-    pacienteNiño = models.ForeignKey(HistoriaNiño, on_delete=models.CASCADE)
-    fecha = models.DateField()
-    motivo_consulta= models.TextField(max_length=500)
     percepcion_paciente = models.TextField(max_length=500)
     sintomas = models.TextField(max_length=500)
     antecendentes_del_motivo_de_consulta = models.TextField(max_length=500)

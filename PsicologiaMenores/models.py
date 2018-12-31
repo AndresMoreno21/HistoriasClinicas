@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from aperturaNinos.models import HistoriaNiño
 
 
 
@@ -9,9 +10,9 @@ from django.urls import reverse
 
 class PsicologiaMenores(models.Model):    
     
+    pacienteNiño = models.ForeignKey(HistoriaNiño, on_delete=models.CASCADE)
    
-    fecha = models.DateField()
-    motivo_consulta= models.TextField(max_length=500)
+    
     percepcion_paciente = models.TextField(max_length=500)
     sintomas = models.TextField(max_length=500)
     antecendentes_del_motivo_de_consulta = models.TextField(max_length=500)

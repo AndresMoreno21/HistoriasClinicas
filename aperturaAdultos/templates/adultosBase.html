@@ -24,7 +24,9 @@
                             <th>Servicio</th>
                             <th>Remite</th>
                             <th>Fecha de ingreso</th>
+                            {% if perms.aperturaAdultos.add_aperturaadultos  %}
                             <th class="disabled-sorting text-right">Acciones</th>
+                            {% endif  %}
                         </tr>
                     </thead>
                     <tbody>
@@ -38,12 +40,13 @@
                             <td>{{ p.remitido_por}}</td>
                             <td>{{ p.ingreso}}</td>
                             
-                            
+                            {% if perms.aperturaAdultos.add_aperturaadultos  %}
                             <td class="text-right">
-                                <a href="#" class="btn btn-simple btn-success btn-icon like"><i class="material-icons">add</i></a>
+                               
                                 <a href="{% url 'adulto-update' p.pk %}" class="btn btn-simple btn-info btn-icon like"><i class="material-icons">person</i></a>
                                 <a href="{% url 'adulto-delete' p.pk %}" class="btn btn-simple btn-danger btn-icon remove"><i class="material-icons">close</i></a>
                             </td>
+                            {% endif  %}
                         </tr>
                         {% endfor %}
                         

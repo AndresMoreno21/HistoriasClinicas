@@ -34,9 +34,15 @@
                     <tbody>
                         {% for p in terapia_list.all %}
                         <tr>
-                            <td>{{ p.paciente.identificacion}}</td>
-                            <td>{{ p.paciente.primer_nombre}}</td>
-                            <td>{{ p.paciente.primer_apellido}}</td>
+                            {% if p.pacienteAdulto %}
+                            <td>{{ p.pacienteAdulto.identificacion}}</td>
+                            <td>{{ p.pacienteAdulto.primer_nombre}}</td>
+                            <td>{{ p.pacienteAdulto.primer_apellido}}</td>
+                            {% else %}
+                            <td>{{ p.pacienteNiño.identificacion}}</td>
+                            <td>{{ p.pacienteNiño.primer_nombre}}</td>
+                            <td>{{ p.pacienteNiño.primer_apellido}}</td>
+                            {% endif %}
                             <td>{{ p.movimientos_activos_y_pasivos}}</td>
                             <td>{{ p.cintura_escapular}}</td>
                             <td>{{ p.cadera}}</td>
@@ -47,7 +53,7 @@
                             
                             
                             <td class="text-right">
-                                <a href="#" class="btn btn-simple btn-success btn-icon like"><i class="material-icons">add</i></a>
+                                
                                 <a href="{% url 'terapia-update' p.id %}" class="btn btn-simple btn-info btn-icon like"><i class="material-icons">person</i></a>
                                 <a href="{% url 'terapia-delete' p.id %}" class="btn btn-simple btn-danger btn-icon remove"><i class="material-icons">close</i></a>
                             </td>

@@ -7,7 +7,8 @@ class PsicologiaMenorForm(forms.ModelForm):
         fields= '__all__'
         widgets = {
 
-        'fecha': forms.DateInput(attrs={'class':'form-control datepicker' }),
+        'fecha_ingreso': forms.DateInput(attrs={'class':'form-control datepicker' }),
+        'pacienteNiño': forms.Select(attrs={'class':'selectpicker'}),
         'motivo_consulta': forms.TextInput(attrs={'class':'form-control'}),
         'percepcion_paciente': forms.TextInput(attrs={'class':'form-control'}),
         'sintomas': forms.TextInput(attrs={'class':'form-control'}),

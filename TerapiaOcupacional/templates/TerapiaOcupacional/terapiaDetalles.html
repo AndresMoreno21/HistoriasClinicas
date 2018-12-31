@@ -8,169 +8,204 @@
 {% block content %}
 
 <form method="post" enctype="multipart/form-data" >{% csrf_token %}
-        <div class="card">
-                
-                
-                
-                <div class="card-content">
-                        
-                        <div class="card">
-                                
-                                <div class="card-header">
-                                        <h4 class="card-title">Formulario de  <strong>terapia ocupacional .</strong>
-                                                
-                                        </h4>
-                                </div>
-                                
-                                <div class="card-content">
-                                        <div class="row">
-                                                <div class="col-md-4">
-                                                        <ul class="nav nav-pills nav-pills-icons nav-pills-rose nav-stacked" role="tablist">
-                                                                <!--color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"-->
-                                                                <li class="active">
-                                                                        <a href="#datos" role="tab" data-toggle="tab">
-                                                                                <i class="material-icons">account_circle</i> Sistema Osteoarticular 
-                                                                        </a>
-                                                                </li>
-                                                                 <li>
-                                                                        <a href="#snm" role="tab" data-toggle="tab">
-                                                                                <i class="material-icons">school</i> Sistema NeuroMuscular
-                                                                        </a>
-                                                                </li>
-                                                                <li>
-                                                                        <a href="#sme" role="tab" data-toggle="tab">
-                                                                                <i class="material-icons">local_hospital</i> Sistema Musculoesqueletico
-                                                                        </a>
-                                                                </li>
-                                                                <li>
-                                                                        <a href="#ss" role="tab" data-toggle="tab">
-                                                                                <i class="material-icons">transfer_within_a_station</i> Sistema Sensorial
-                                                                        </a>
-                                                                </li>
-                                                                <li>
-                                                                        <a href="#avd" role="tab" data-toggle="tab">
-                                                                                <i class="material-icons">library_books</i> Actividades de la vida diaria
-                                                                        </a>
-                                                                </li>
-                                                                <li>
-                                                                        <a href="#pa" role="tab" data-toggle="tab">
-                                                                                <i class="material-icons">school</i> Pruebas aplicadas
-                                                                        </a>
-                                                                </li>
-                                                                
-                                                        </ul>
-                                                </div>
-                                                
-                                                <div class="col-md-8">
-                                                        <div class="tab-content">
-                                                                <div class="tab-pane active" id="datos">
-                                                                        <h6>Movimientos activos y pasivos de las articulaciones</h6>
-                                                                        {{ form.movimientos_activos_y_pasivos}}
-                                                                        
-                                                                        <h6>Cintura escapular - Hombros</h6>
-                                                                        {{ form.cintura_escapular}}
-                                                                        
-                                                                        <h6>Cadera - Pelvis</h6>
-                                                                        {{ form.cadera}}
-                                                                        
-                                                                        <h6>Rodilla: genu varus, genu valgus, movilidad,crujidos articulares.</h6>
-                                                                        {{ form.rodilla}}
-                                                                        
-                                                                        <h6>Pie: Equinus, talus, varus, valgus, planos, hallux valgus</h6>
-                                                                        {{ form.pie}}
-                                                                        
-                                                                        <h6>Deformaciones: cifosis, lordosis, escoliosis, cifoescoliosis</h6>
-                                                                        {{ form.deformaciones}}
-                                                                        
-                                                                        
-                                                                </div>
-                                                                
-                                                                <div class="tab-pane" id="snm">
-                                                                        
-                                                                        <h6>Tono Muscular</h6>
-                                                                        {{ form.tono_muscular}}
-                                                                        
-                                                                        <h6>Actividad Refleja</h6>
-                                                                        {{ form.actividad_refleja}}
-                                                                        
-                                                                </div>
-                                                                
-                                                                <div class="tab-pane" id="sme">
-
-                                                                		<h6>Trofismo</h6>
-                                                                    	{{ form.trofismo}}
-                                                                        
-                                                                   	 	<h6>Funcion Muscular</h6>
-	                                                                    {{ form.funcion_muscular}}
-
-	                                                                    <h6>Funcion Postular</h6>
-	                                                                    {{ form.funcion_postural}}
-	                                                                       
-                                                                </div>
-                                                                
-                                                                <div class="tab-pane" id="ss">
-                                                                        <div class="form-group label-floating">
-                                                                                <div class="panel-heading" role="tab" id="headingOne">
-                                                                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#medica" aria-expanded="true" aria-controls="collapseOne">
-                                                                                                <h4 class="panel-title">
-                                                                                                        Signos de alteracion
-                                                                                                        <i class="material-icons">keyboard_arrow_down</i>
-                                                                                                </h4>
-                                                                                        </a>
-                                                                                </div>
-                                                                                <div id="medica" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                                                                        <div class="panel-body">
-                                                                                                
-                                                                                               <h6>Tactil</h6>
-	                                                                  						  	{{ form.tactil}}
-	                                                                  						  <h6>Propioceptivo</h6>
-	                                                                  						  	{{ form.propioceptivo}}
-	                                                                  						  <h6>Vestibular</h6>
-	                                                                  						 	 {{ form.vestibular}}
-	                                                                  						  <h6>Aduitivo</h6>
-	                                                                  						 	 {{ form.auditivo}}
-	                                                                  						  <h6>Gustativo</h6>
-	                                                                  						 	 {{ form.gustativo}}
-	                                                                  						  <h6>Visual</h6>
-	                                                                  						 	 {{ form.visual}}
-	                                                                  						  <h6>Olfativo</h6>
-	                                                                  							  {{ form.olfativo}}
-
-                                                                                        </div>
-                                                                                </div>
-                                                                        </div>
-                                                                </div>
-                                                                
-                                                                <div class="tab-pane" id="avd">
-                                                                	<h6>Alimentacion</h6>
-	                                                               	{{ form.alimentacion}}
-	                                                               	<h6>Higiene</h6>
-	                                      						  	{{ form.higiene}}
-	                 	                      						<h6>Vestido</h6>
-	                                                                {{ form.vestido}}
-	                                                                <h6>Descanso y sueño</h6>
-	                                                                {{ form.descanso}}
-	                                                                <h6>Educacion</h6>
-	                                                                {{ form.educacion}}
-	                                                                <h6>Juego</h6>
-	                                                                {{ form.juego}}
-                                                                        
-                                                                </div>
-
-                                                                 <div class="tab-pane" id="pa">
-                                                                        
-                                                                </div>
-                                                                
-                                                        </div>
-                                                        
-                                                </div>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
-        </div>
-        <button type="submit" class="btn btn-success">Enviar</button>
-        <a href="{% url 'terapia-lista' %}" class="btn btn-danger">Cancelar</a>
+	<div class="card">
+		
+		
+		
+		<div class="card-content">
+			
+			<div class="card">
+				
+				<div class="card-header">
+					<h4 class="card-title">Editar informacion de: <b> {{ object.pacienteAdulto.identificacion }} - {{ object.pacienteAdulto.primer_nombre}} {{ object.pacienteAdulto.primer_apellido}} </b> </strong></strong>
+						
+					</h4>
+				</div>
+				
+				<div class="card-content">
+					{% if form.errors %}
+					<div class="alert alert-danger alert-with-icon" data-notify="container">
+						<i class="material-icons" data-notify="icon">notifications</i>
+						<button type="button" aria-hidden="true" class="close">
+							<i class="material-icons">close</i>
+						</button>
+						<span data-notify="message">{{form.errors}}</span>
+					</div>
+					{% endif%}
+					<h4 class="card-title">Seleccione un paciente Adulto</strong>
+						{{form.pacienteAdulto}}
+					</h4>
+					<h4 class="card-title">Seleccione un paciente Menor</strong>
+						{{form.pacienteNiño}}
+					</h4>
+					<div class="row">
+						<div class="col-md-4">
+							<ul class="nav nav-pills nav-pills-icons nav-pills-rose nav-stacked" role="tablist">
+								<!--color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"-->
+								<li class="active">
+									<a href="#datos" role="tab" data-toggle="tab">
+										<i class="material-icons">account_circle</i> Sistema Osteoarticular 
+									</a>
+								</li>
+								<li>
+									<a href="#snm" role="tab" data-toggle="tab">
+										<i class="material-icons">school</i> Sistema NeuroMuscular
+									</a>
+								</li>
+								<li>
+									<a href="#sme" role="tab" data-toggle="tab">
+										<i class="material-icons">local_hospital</i> Sistema Musculoesqueletico
+									</a>
+								</li>
+								<li>
+									<a href="#ss" role="tab" data-toggle="tab">
+										<i class="material-icons">transfer_within_a_station</i> Sistema Sensorial
+									</a>
+								</li>
+								<li>
+									<a href="#avd" role="tab" data-toggle="tab">
+										<i class="material-icons">library_books</i> Actividades de la vida diaria
+									</a>
+								</li>
+								<li>
+									<a href="#pa" role="tab" data-toggle="tab">
+										<i class="material-icons">school</i> Pruebas aplicadas
+									</a>
+								</li>
+								
+							</ul>
+						</div>
+						
+						<div class="col-md-8">
+							<div class="tab-content">
+								<div class="tab-pane active" id="datos">
+									<h6>Movimientos activos y pasivos de las articulaciones</h6>
+									{{ form.movimientos_activos_y_pasivos}}
+									
+									<h6>Cintura escapular - Hombros</h6>
+									{{ form.cintura_escapular}}
+									
+									<h6>Cadera - Pelvis</h6>
+									{{ form.cadera}}
+									
+									<h6>Rodilla: genu varus, genu valgus, movilidad,crujidos articulares.</h6>
+									{{ form.rodilla}}
+									
+									<h6>Pie: Equinus, talus, varus, valgus, planos, hallux valgus</h6>
+									{{ form.pie}}
+									
+									<h6>Deformaciones: cifosis, lordosis, escoliosis, cifoescoliosis</h6>
+									{{ form.deformaciones}}
+									
+									
+								</div>
+								
+								<div class="tab-pane" id="snm">
+									
+									<h6>Tono Muscular</h6>
+									{{ form.tono_muscular}}
+									
+									<h6>Actividad Refleja</h6>
+									{{ form.actividad_refleja}}
+									
+								</div>
+								
+								<div class="tab-pane" id="sme">
+									
+									<h6>Trofismo</h6>
+									{{ form.trofismo}}
+									
+									<h6>Funcion Muscular</h6>
+									{{ form.funcion_muscular}}
+									
+									<h6>Funcion Postular</h6>
+									{{ form.funcion_postural}}
+									
+								</div>
+								
+								<div class="tab-pane" id="ss">
+									<div class="form-group label-floating">
+										<div class="panel-heading" role="tab" id="headingOne">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#medica" aria-expanded="true" aria-controls="collapseOne">
+												<h4 class="panel-title">
+													Signos de alteracion
+													<i class="material-icons">keyboard_arrow_down</i>
+												</h4>
+											</a>
+										</div>
+										<div id="medica" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+											<div class="panel-body">
+												
+												<h6>Tactil</h6>
+												{{ form.tactil}}
+												<h6>Propioceptivo</h6>
+												{{ form.propioceptivo}}
+												<h6>Vestibular</h6>
+												{{ form.vestibular}}
+												<h6>Aduitivo</h6>
+												{{ form.auditivo}}
+												<h6>Gustativo</h6>
+												{{ form.gustativo}}
+												<h6>Visual</h6>
+												{{ form.visual}}
+												<h6>Olfativo</h6>
+												{{ form.olfativo}}
+												
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="tab-pane" id="avd">
+									<h6>Alimentacion</h6>
+									{{ form.alimentacion}}
+									<h6>Higiene</h6>
+									{{ form.higiene}}
+									<h6>Vestido</h6>
+									{{ form.vestido}}
+									<h6>Descanso y sueño</h6>
+									{{ form.descanso}}
+									<h6>Educacion</h6>
+									{{ form.educacion}}
+									<h6>Juego</h6>
+									{{ form.juego}}
+									
+								</div>
+								
+								<div class="tab-pane" id="pa">
+									<div class="form-group label-floating">
+										<div class="panel-heading" role="tab" id="headingOne">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#pruebas" aria-expanded="true" aria-controls="collapseOne">
+												<h4 class="panel-title">
+													Pruebas Aplicadas
+													<i class="material-icons">keyboard_arrow_down</i>
+												</h4>
+											</a>
+										</div>
+										<div id="pruebas" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+											<div class="panel-body">
+												
+												{{ form.pruebas_aplicadas|as_crispy_field}}
+												
+											</div>
+										</div>
+									</div>
+									
+									
+									<h6>Otras</h6>
+									{{ form.otras}}
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button type="submit" class="btn btn-success">Enviar</button>
+	<a href="{% url 'terapia-lista' %}" class="btn btn-danger">Cancelar</a>
 </form>
 
 {% endblock content%}

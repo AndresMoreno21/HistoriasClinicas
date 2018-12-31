@@ -77,13 +77,16 @@
                     </a>
                     <div class="collapse" id="Recepcion">
                         <ul class="nav">
-                            
+                            {% if perms.aperturaAdultos.add_aperturaadultos  %}
                             <li>
                                 <a href="{% url 'adulto-create' %}">Apertura Adultos</a>
                             </li>
+                            {% endif  %}
+                            {% if perms.aperturaNinos.add_historianiño  %}
                             <li>
                                 <a href="{% url 'nino-create' %}">Apertura Niños</a>
                             </li>
+                            {% endif  %}
                             <li>
                                 <a href="{% url 'adulto-lista' %}">Lista de pacientes <b>Adultos</b></a>
                             </li>
@@ -108,12 +111,15 @@
                                     <li>
                                         <a href="{% url 'terapia-create' %}">Crear paciente</a>
                                     </li>
-                                    <li>
-                                        <a href="{% url 'terapia-lista' %}">Lista de pacientes</a>
-                                    </li>
-                                    
                                 </ul>
                             </div>
+                        </li>
+                        
+                        <li>
+                            <a href="{% url 'terapia-lista' %}">
+                                <i class="material-icons">supervisor_account</i>
+                                <p>Lista de pacientes</p>
+                            </a>
                         </li>
                         {% endif  %}
                         
@@ -128,21 +134,25 @@
                             <div class="collapse" id="Psicologia">
                                 <ul class="nav">
                                     <li>
-                                        <a href="{% url 'psico-create' %}">Crear psicologia</a>
+                                        <a href="{% url 'psico-create' %}">Crear psicologia Adultos</a>
                                     </li>
                                     <li>
-                                        <a href="{% url 'psicoMenor-create' %}">Crear psicologia menores</a>
+                                        <a href="{% url 'psicoMenor-create' %}">Crear psicologia Menores</a>
                                     </li>
-                                    <li>
-                                        <a href="{% url 'psico-lista' %}">Lista de pacientes</a>
-                                    </li>
-                                    <li>
-                                        <a href="{% url 'psicoMenor-lista' %}">Lista de pacientes menores</a>
-                                    </li>
-                                    
-                                    
                                 </ul>
                             </div>
+                        </li>
+                        <li >
+                            <a  href="{% url 'psico-lista' %}">
+                                <i class="material-icons">accessibility</i>
+                                <p>Pacientes Adultos</p>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="{% url 'psicoMenor-lista' %}">
+                                <i class="material-icons">child_care</i>
+                                <p>Pacientes Menores</p>
+                            </a>
                         </li>
                         {% endif %}
                         
@@ -385,7 +395,7 @@
                                                 <div class="card-footer">
                                                     <div class="stats">
                                                         <i class="material-icons text-warning">warning</i>
-                                                        <a href="#pablo">Servicio con mayor actividad diaria</a>
+                                                        <a href="#pablo">Servicio con menos actividad </a>
                                                     </div>
                                                 </div>
                                             </div>

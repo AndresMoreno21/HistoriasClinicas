@@ -8,112 +8,131 @@
 {% block content %}
 
 <form method="post" enctype="multipart/form-data" >{% csrf_token %}
-        <div class="card">
-                
-                
-                
-                <div class="card-content">
-                        
-                        <div class="card">
-                                
-                                <div class="card-header">
-                                        <h4 class="card-title">Formulario de  <strong>Psicologia .</strong>
-                                                
-                                        </h4>
-                                </div>
-                                
-                                <div class="card-content">
-                                        <div class="row">
-                                                <div class="col-md-4">
-                                                        <ul class="nav nav-pills nav-pills-icons nav-pills-rose nav-stacked" role="tablist">
-                                                                <!--color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"-->
-                                                                <li class="active">
-                                                                        <a href="#datos" role="tab" data-toggle="tab">
-                                                                                <i class="material-icons">account_circle</i> Servicio de psicologia
-                                                                        </a>
-                                                                </li>
-                                                            
-                                                                
-                                                                
-                                                        </ul>
-                                                </div>
-                                                
-                                                <div class="col-md-8">
-                                                        <div class="tab-content">
-                                                                <div class="tab-pane active" id="datos">
-
-                                                                        <h6>Fecha</h6>
-                                                                        {{ form.fecha}}
-                                                                        
-                                                                        <h6>Motivo Consulta</h6>
-                                                                        {{ form.motivo_consulta}}
-                                                                        
-                                                                        <h6>Percepcion del paciente y/o Niño sobre el motivo de la consulta</h6>
-                                                                        {{ form.percepcion_paciente}}
-                                                                        
-                                                                        <h6>Sintomas</h6>
-                                                                        {{ form.sintomas}}
-                                                                        
-                                                                        <h6>Antecedentes del motivo de la consulta</h6>
-                                                                        {{ form.antecendentes_del_motivo_de_consulta}}
-                                                                        
-                                                                        <h6>Historia Familiar relevante</h6>
-                                                                        {{ form.historia_familiar_relevante}}
-
-                                                                        <h6>Historia Personal o de desarrollo relevante</h6>
-                                                                        {{ form.historia_personal}}
-
-                                                                        <h6>Consumo de sustancias psicoactivas</h6>
-                                                                        {{ form.consumo_sustancias_psicoactivas}}
-
-                                                                        <h6>Tratamientos psicológicos o psiquiátricos previos</h6>
-                                                                        {{ form.tratamientos_psicologicos_o_psiquiatricos_previos}}
-
-                                                                        <h6>Antecedentes psicológicos, psiquiátricos y médicos familiares</h6>
-                                                                        {{ form.antecedentes}}
-
-                                                                        <h6>Conflictos intrapsíquicos</h6>
-                                                                        {{ form.conflictos_intrapsiquicos}}
-
-                                                                        <h6>Expectativas del paciente y/o del niño frente al proceso</h6>
-                                                                        {{ form.expectativas_del_paciente}}
-
-                                                                        <h6>Factores de riesgo, protectores y predisponentes</h6>
-                                                                        {{ form.factores_de_riesgo}}
-
-                                                                        <h6>Características cognitivas</h6>
-                                                                        {{ form.caracteristicas_cognitivas}}
-
-                                                                         <h6>Características sociales y de relaciones interpesonales</h6>
-                                                                        {{ form.caracteristicas_sociales_y_relaciones_interpersonales}}
-
-                                                                         <h6>Características del rango afectivo y emocional</h6>
-                                                                        {{ form.caracteristicas_del_rango_afectivo_y_emocional}}
-
-                                                                         <h6>Características de la conducta</h6>
-                                                                        {{ form.caracteristicas_de_conducta}}
-
-                                                                        <h6>Características laborales</h6>
-                                                                        {{ form.caracteristicas_laborales}}
-
-                                                                        
-                                                                        
-                                                                </div>
-                                                                
-                                                             
-                                                                
-                                                                
-                                                                
-                                                        </div>
-                                                        
-                                                </div>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
-        </div>
-        <button type="submit" class="btn btn-success">Enviar</button>
-        <a href="{% url 'psico-lista' %}" class="btn btn-danger">Cancelar</a>
+	<div class="card">
+		<div class="card-header card-header-icon" data-background-color="rose">
+			<i class="material-icons">accessibility</i>
+			
+		</div>
+		<div class="card-content">
+			<div class="card">
+				
+				
+				<div class="card-header">
+					<h4 class="card-title">Editar informacion de: <b> {{ object.pacienteAdulto.identificacion }} - {{ object.pacienteAdulto.primer_nombre}} {{ object.pacienteAdulto.primer_apellido}} </b> </strong>
+					</h4>
+				</div>
+				
+				<div class="card-content">
+					<div class="row">
+						<div class="col-md-4">
+						
+							
+							<ul class="nav nav-pills nav-pills-icons nav-pills-rose nav-stacked" role="tablist">
+								<!--color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"-->
+								
+								<li class="active" >
+									<a href="#sintomas" role="tab" data-toggle="tab" >
+										<i class="material-icons">account_circle</i> Percepcion, <br>sintomas, Expectativas, Factores 
+									</a>
+								</li>
+								
+								<li >
+									<a href="#historias" role="tab" data-toggle="tab">
+										<i class="material-icons">book</i> Historias y antecedentes
+									</a>
+								</li>
+								<li >
+									<a href="#consumos" role="tab" data-toggle="tab">
+										<i class="material-icons">face</i> Consumos, tratamientos <br> y conflictos
+									</a>
+								</li>
+								<li>
+									<a href="#caracteristicas" role="tab" data-toggle="tab">
+										<i class="material-icons">assignment</i> Caracteristicas
+									</a>
+								</li>
+								
+								
+								
+							</ul>
+						</div>
+						
+						<div class="col-md-8">
+							<div class="tab-content">
+								
+								<div class="tab-pane active" id="sintomas">
+									<h6>Percepcion del paciente y/o Adulto sobre el motivo de la consulta</h6>
+									{{ form.percepcion_paciente}}
+									
+									<h6>Sintomas</h6>
+									{{ form.sintomas}}
+									
+									<h6>Expectativas del paciente y/o del Adulto frente al proceso</h6>
+									{{ form.expectativas_del_paciente}}
+									
+									<h6>Factores de riesgo, protectores y predisponentes</h6>
+									{{ form.factores_de_riesgo}}
+									
+								</div>
+								
+								<div class="tab-pane" id="historias">
+									
+									<h6>Antecedentes del motivo de la consulta</h6>
+									{{ form.antecendentes_del_motivo_de_consulta}}
+									
+									<h6>Historia Familiar relevante</h6>
+									{{ form.historia_familiar_relevante}}
+									
+									<h6>Historia Personal o de desarrollo relevante</h6>
+									{{ form.historia_personal}}
+									
+									<h6>Antecedentes psicológicos, psiquiátricos y médicos familiares</h6>
+									{{ form.antecedentes}}
+								</div>
+								
+								<div class="tab-pane " id="consumos">
+									
+									<h6>Consumo de sustancias psicoactivas</h6>
+									{{ form.consumo_sustancias_psicoactivas}}
+									
+									<h6>Tratamientos psicológicos o psiquiátricos previos</h6>
+									{{ form.tratamientos_psicologicos_o_psiquiatricos_previos}}
+									
+									<h6>Conflictos intrapsíquicos</h6>
+									{{ form.conflictos_intrapsiquicos}}
+									
+								</div>
+								
+								<div class="tab-pane " id="caracteristicas">
+									<h6>Características cognitivas</h6>
+									{{ form.caracteristicas_cognitivas}}
+									
+									<h6>Características sociales y de relaciones interpesonales</h6>
+									{{ form.caracteristicas_sociales_y_relaciones_interpersonales}}
+									
+									<h6>Características del rango afectivo y emocional</h6>
+									{{ form.caracteristicas_del_rango_afectivo_y_emocional}}
+									
+									<h6>Características de la conducta</h6>
+									{{ form.caracteristicas_de_conducta}}
+									
+									<h6>Características laborales</h6>
+									{{ form.caracteristicas_laborales}}
+									
+								</div>
+								
+							</div>
+							
+						</div>
+			
+					</div>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-success">Enviar</button>
+			<a href="{% url 'psico-lista' %}" class="btn btn-danger">Cancelar</a>
+		</div>
+	</div>
+	
 </form>
 
 {% endblock content%}

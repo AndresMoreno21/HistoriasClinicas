@@ -14,7 +14,7 @@ urlpatterns = [
     path('aperturaNino/<int:pk>/detalles',views.NiñoUpdate.as_view(),name='nino-update'),
     path('aperturaNino/crearHistoriaMenor',views.NiñoCreate.as_view(),name='nino-create'),
     path('aperturaNino/<int:pk>/eliminarHistoriaMenor',views.NiñoDelete.as_view(),name='nino-delete'),
-    path('buscarNiño/',views.Buscar.as_view(),name='buscar-niño'),
+    
 
     path('api/aperturaNiños', include(router.urls)),
 

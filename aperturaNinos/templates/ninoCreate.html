@@ -12,8 +12,8 @@
 		</div>
 		
 		<div class="card-content">
-			{% if form.errors %}
 			
+			{% if form.errors %}
 			<div class="alert alert-danger alert-with-icon" data-notify="container">
 				<i class="material-icons" data-notify="icon">notifications</i>
 				<button type="button" aria-hidden="true" class="close">
@@ -160,10 +160,10 @@
 									
 									<h6>Remitido Por</h6>
 									{{ form.remitido_por}}
-
+									
 									<h6>Diagnostico principal</h6>
 									{{ form.diagnostico_principal}}
-
+									
 									<h6>Diagnositco secundario</h6>
 									{{ form.diagnostico_secundario}}
 									
@@ -360,10 +360,11 @@
 					</div>
 				</div>
 			</div>
+			<button type="submit" class="btn btn-success">Enviar</button>
+			<a href="{% url 'nino-lista' %}" class="btn btn-danger">Cancelar</a>
 		</div>
 	</div>
-	<button type="submit" class="btn btn-success">Enviar</button>
-	<a href="{% url 'adulto-lista' %}" class="btn btn-danger">Cancelar</a>
+	
 </form>
 
 {% endblock content%}

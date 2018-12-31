@@ -26,25 +26,14 @@ class NiñoCreate(LoginRequiredMixin,CreateView):
 
 class NiñoUpdate(LoginRequiredMixin,UpdateView):
     model = HistoriaNiño
+    form_class = forms.MenorForm
     template_name = 'ninoDetalles.html'
-    fields= '__all__'
     success_url = reverse_lazy('nino-lista')
 
 class NiñoDelete(LoginRequiredMixin, DeleteView):
     model = HistoriaNiño
     template_name = 'nino_confirm_delete.html'
-    fields='__all__'
     success_url = reverse_lazy('nino-lista')
-
-
-class Buscar(LoginRequiredMixin,TemplateView):
-    
-    def post(self, request, *args, **kwargs):
-        buscar = request.POST['buscalo']
-        id = HistoriaNiño.objects.filter(niño__contains=buscar)
-        
-        return render(request, 'buscarNiño.html' , {'id': id})
-
 
 class NiñoViewSet(LoginRequiredMixin,viewsets.ModelViewSet):
     queryset = HistoriaNiño.objects.all()

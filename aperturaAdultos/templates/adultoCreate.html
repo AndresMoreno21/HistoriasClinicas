@@ -12,7 +12,15 @@
 			</div>
 			
 			<div class="card-content">
-				
+				{% if form.errors %}
+				<div class="alert alert-danger alert-with-icon" data-notify="container">
+					<i class="material-icons" data-notify="icon">notifications</i>
+					<button type="button" aria-hidden="true" class="close">
+						<i class="material-icons">close</i>
+					</button>
+					<span data-notify="message">{{form.errors}}</span>
+				</div>
+				{% endif%}
 				<ul class="nav nav-pills nav-pills-info">
 					<!--color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"-->
 					<li class="active">
@@ -202,41 +210,41 @@
 						
 					</div>
 					<div class="card-content">
-					<ul class="nav nav-pills nav-pills-warning">
-						<!--color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"-->
-						<li class="active">
-							<a href="#datos" role="tab" data-toggle="tab">
-								 Datos generales
-							</a>
-						</li>
-						<li>
-							<a href="#hc" role="tab" data-toggle="tab">
-								 Historia Medica
-							</a>
-						</li>
-						<li>
-							<a href="#he" role="tab" data-toggle="tab">
-								 Habitos y estilo de vida
-							</a>
-						</li>
-						<li>
-							<a href="#ao" role="tab" data-toggle="tab">
-								 Area Laboral u Ocupacional
-							</a>
-						</li>
-						<li>
-							<a href="#hs" role="tab" data-toggle="tab">
-								 Historia Sociofamiliar
-							</a>
-						</li>
-					</ul>
+						<ul class="nav nav-pills nav-pills-warning">
+							<!--color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"-->
+							<li class="active">
+								<a href="#datos" role="tab" data-toggle="tab">
+									Datos generales
+								</a>
+							</li>
+							<li>
+								<a href="#hc" role="tab" data-toggle="tab">
+									Historia Medica
+								</a>
+							</li>
+							<li>
+								<a href="#he" role="tab" data-toggle="tab">
+									Habitos y estilo de vida
+								</a>
+							</li>
+							<li>
+								<a href="#ao" role="tab" data-toggle="tab">
+									Area Laboral u Ocupacional
+								</a>
+							</li>
+							<li>
+								<a href="#hs" role="tab" data-toggle="tab">
+									Historia Sociofamiliar
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 				
 			</div>
 			<div  class="card-content" >
-			<button type="submit" class="btn btn-success">Enviar</button>
-			<a href="{% url 'adulto-lista' %}" class="btn btn-danger">Cancelar</a>
+				<button type="submit" class="btn btn-success">Enviar</button>
+				<a href="{% url 'adulto-lista' %}" class="btn btn-danger">Cancelar</a>
 			</div>
 		</div>
 		
