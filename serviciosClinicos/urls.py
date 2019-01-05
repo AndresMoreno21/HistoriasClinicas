@@ -28,7 +28,7 @@ urlpatterns = [
 
     path('diseñobasico' , views.baseNormal , name = 'baseNormal'),
 
-    path('Usuarios/', include('Usuarios.urls')),
+    path('UsuariosHC/', include('Usuarios.urls')),
     path('Usuarios/', include('django.contrib.auth.urls')),
     
     
