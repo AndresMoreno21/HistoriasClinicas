@@ -98,19 +98,19 @@ WSGI_APPLICATION = 'serviciosClinicos.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-       'ENGINE': 'django.db.backends.sqlite3',
-      'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-
     #'default': {
-    #    'ENGINE': 'django.db.backends.postgresql',
-    #    'NAME': 'serviciosClinicosDB',
-     #   'USER': 'postgres',
-      #  'PASSWORD':'',
-       # 'HOST':'localhost',
-        #'PORT':''
+    #   'ENGINE': 'django.db.backends.sqlite3',
+    #  'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     #}
+
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dd8bl2i6rvpifk',
+        'USER': 'xozefsuodlshzp',
+        'PASSWORD':'48955ffbb135781329603b5963d7dee94fca29e1fde5a98d77870c1c2d47fe38',
+        'HOST':'ec2-54-225-227-125.compute-1.amazonaws.com',
+        'PORT':'5432'
+    }
 }
 
 AUTH_USER_MODEL = 'Usuarios.CustomUser'
