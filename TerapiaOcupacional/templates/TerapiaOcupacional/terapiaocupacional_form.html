@@ -70,24 +70,116 @@
 						<div class="col-md-8">
 							<div class="tab-content">
 								<div class="tab-pane active" id="datos">
+									
 									<h6>Movimientos activos y pasivos de las articulaciones</h6>
 									{{ form.movimientos_activos_y_pasivos}}
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="mov">
+											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#movv" aria-expanded="false" aria-controls="collapseTwo">
+												<h4 class="panel-title">
+													Descripcion Movimientos activos y pasivos de las articulaciones
+													<i class="material-icons">keyboard_arrow_down</i>
+												</h4>
+											</a>
+										</div>
+										<div id="movv" class="panel-collapse collapse" role="tabpanel" aria-labelledby="mov">
+											<div class="panel-body">
+												{{ form.descripcion_movimientos_activos_y_pasivos}}
+											</div>
+										</div>
+									</div>
 									
 									<h6>Cintura escapular - Hombros</h6>
 									{{ form.cintura_escapular}}
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="cin">
+											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#cinn" aria-expanded="false" aria-controls="collapseTwo">
+												<h4 class="panel-title">
+													Descripcion Cintura escapular - Hombros
+													<i class="material-icons">keyboard_arrow_down</i>
+												</h4>
+											</a>
+										</div>
+										<div id="cinn" class="panel-collapse collapse" role="tabpanel" aria-labelledby="cin">
+											<div class="panel-body">
+												{{ form.descripcion_cintura_escapular}}
+											</div>
+										</div>
+									</div>
+									
 									
 									<h6>Cadera - Pelvis</h6>
 									{{ form.cadera}}
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="cad">
+											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#cadd" aria-expanded="false" aria-controls="collapseTwo">
+												<h4 class="panel-title">
+													Descripcion Cadera - Pelvis
+													<i class="material-icons">keyboard_arrow_down</i>
+												</h4>
+											</a>
+										</div>
+										<div id="cadd" class="panel-collapse collapse" role="tabpanel" aria-labelledby="cad">
+											<div class="panel-body">
+												{{ form.descripcion_cadera}}
+											</div>
+										</div>
+									</div>
 									
-									<h6>Rodilla: genu varus, genu valgus, movilidad,crujidos articulares.</h6>
+									<h6>Rodilla: genu varus, genu valgus, movilidad,crujidos articulares</h6>
 									{{ form.rodilla}}
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="rod">
+											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#rodd" aria-expanded="false" aria-controls="collapseTwo">
+												<h4 class="panel-title">
+													Descripcion Rodilla
+													<i class="material-icons">keyboard_arrow_down</i>
+												</h4>
+											</a>
+										</div>
+										<div id="rodd" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rod">
+											<div class="panel-body">
+												{{ form.descripcion_rodilla}}
+											</div>
+										</div>
+									</div>
+									
 									
 									<h6>Pie: Equinus, talus, varus, valgus, planos, hallux valgus</h6>
 									{{ form.pie}}
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="pie">
+											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#piee" aria-expanded="false" aria-controls="collapseTwo">
+												<h4 class="panel-title">
+													Descripcion Pie
+													<i class="material-icons">keyboard_arrow_down</i>
+												</h4>
+											</a>
+										</div>
+										<div id="piee" class="panel-collapse collapse" role="tabpanel" aria-labelledby="pie">
+											<div class="panel-body">
+												{{ form.descripcion_pie}}
+											</div>
+										</div>
+									</div>
 									
 									<h6>Deformaciones: cifosis, lordosis, escoliosis, cifoescoliosis</h6>
 									{{ form.deformaciones}}
-									
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="def">
+											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#deff" aria-expanded="false" aria-controls="collapseTwo">
+												<h4 class="panel-title">
+													Descripcion Deformaciones
+													<i class="material-icons">keyboard_arrow_down</i>
+												</h4>
+											</a>
+										</div>
+										<div id="deff" class="panel-collapse collapse" role="tabpanel" aria-labelledby="def">
+											<div class="panel-body">
+												{{ form.descripcion_deformaciones}}
+											</div>
+										</div>
+									</div>
 									
 								</div>
 								
@@ -105,43 +197,189 @@
 									
 									<h6>Trofismo</h6>
 									{{ form.trofismo}}
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="tro">
+											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#troo" aria-expanded="false" aria-controls="collapseTwo">
+												<h4 class="panel-title">
+													Descripcion Trofismo
+													<i class="material-icons">keyboard_arrow_down</i>
+												</h4>
+											</a>
+										</div>
+										<div id="troo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tro">
+											<div class="panel-body">
+												{{ form.descripcion_trofismo}}
+											</div>
+										</div>
+									</div>
+									
 									
 									<h6>Funcion Muscular</h6>
 									{{ form.funcion_muscular}}
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="fun">
+											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#funn" aria-expanded="false" aria-controls="collapseTwo">
+												<h4 class="panel-title">
+													Descripcion Funcion Muscular
+													<i class="material-icons">keyboard_arrow_down</i>
+												</h4>
+											</a>
+										</div>
+										<div id="funn" class="panel-collapse collapse" role="tabpanel" aria-labelledby="fun">
+											<div class="panel-body">
+												{{ form.descripcion_funcion_muscular}}
+											</div>
+										</div>
+									</div>
 									
 									<h6>Funcion Postular</h6>
 									{{ form.funcion_postural}}
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="pos">
+											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#poss" aria-expanded="false" aria-controls="collapseTwo">
+												<h4 class="panel-title">
+													Descripcion Funcion Postural
+													<i class="material-icons">keyboard_arrow_down</i>
+												</h4>
+											</a>
+										</div>
+										<div id="poss" class="panel-collapse collapse" role="tabpanel" aria-labelledby="pos">
+											<div class="panel-body">
+												{{ form.descripcion_funcion_postural}}
+											</div>
+										</div>
+									</div>
 									
 								</div>
 								
 								<div class="tab-pane" id="ss">
 									<div class="form-group label-floating">
-										<div class="panel-heading" role="tab" id="headingOne">
-											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#medica" aria-expanded="true" aria-controls="collapseOne">
-												<h4 class="panel-title">
-													Signos de alteracion
-													<i class="material-icons">keyboard_arrow_down</i>
-												</h4>
-											</a>
+										
+										
+										
+										<h6>Tactil</h6>
+										{{ form.tactil}}
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="headingTwo">
+												<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+													<h4 class="panel-title">
+														Descripcion tactil
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+												<div class="panel-body">
+													{{ form.descripcion_tactil}}
+												</div>
+											</div>
 										</div>
-										<div id="medica" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-											<div class="panel-body">
-												
-												<h6>Tactil</h6>
-												{{ form.tactil}}
-												<h6>Propioceptivo</h6>
-												{{ form.propioceptivo}}
-												<h6>Vestibular</h6>
-												{{ form.vestibular}}
-												<h6>Aduitivo</h6>
-												{{ form.auditivo}}
-												<h6>Gustativo</h6>
-												{{ form.gustativo}}
-												<h6>Visual</h6>
-												{{ form.visual}}
-												<h6>Olfativo</h6>
-												{{ form.olfativo}}
-												
+										
+										<h6>Propioceptivo</h6>
+										{{ form.propioceptivo}}
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="propio">
+												<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#propioc" aria-expanded="false" aria-controls="collapseTwo">
+													<h4 class="panel-title">
+														Descripcion Propioceptivo
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="propioc" class="panel-collapse collapse" role="tabpanel" aria-labelledby="propio">
+												<div class="panel-body">
+													{{ form.descripcion_propioceptivo}}
+												</div>
+											</div>
+										</div>
+										
+										<h6>Vestibular</h6>
+										{{ form.vestibular}}
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="vestivular">
+												<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#vestivularv" aria-expanded="false" aria-controls="collapseTwo">
+													<h4 class="panel-title">
+														Descripcion Vestibular
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="vestivularv" class="panel-collapse collapse" role="tabpanel" aria-labelledby="vestibular">
+												<div class="panel-body">
+													{{ form.descripcion_vestibular}}
+												</div>
+											</div>
+										</div>
+										
+										
+										<h6>Auditivo</h6>
+										{{ form.auditivo}}
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="auditivo">
+												<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#auditivoa" aria-expanded="false" aria-controls="collapseTwo">
+													<h4 class="panel-title">
+														Descripcion Auditivo
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="auditivoa" class="panel-collapse collapse" role="tabpanel" aria-labelledby="auditivo">
+												<div class="panel-body">
+													{{ form.descripcion_auditivo}}
+												</div>
+											</div>
+										</div>
+										
+										<h6>Gustativo</h6>
+										{{ form.gustativo}}
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="gustativo">
+												<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#gustativog" aria-expanded="false" aria-controls="collapseTwo">
+													<h4 class="panel-title">
+														Descripcion Gustativo
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="gustativog" class="panel-collapse collapse" role="tabpanel" aria-labelledby="gustativo">
+												<div class="panel-body">
+													{{ form.descripcion_gustativo}}
+												</div>
+											</div>
+										</div>
+										<h6>Visual</h6>
+										{{ form.visual}}
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="visual">
+												<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#visualv" aria-expanded="false" aria-controls="collapseTwo">
+													<h4 class="panel-title">
+														Descripcion Visual
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="visualv" class="panel-collapse collapse" role="tabpanel" aria-labelledby="visual">
+												<div class="panel-body">
+													{{ form.descripcion_visual}}
+												</div>
+											</div>
+										</div>
+										
+										<h6>Olfativo</h6>
+										{{ form.olfativo}}
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="olfativo">
+												<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#olfativoo" aria-expanded="false" aria-controls="collapseTwo">
+													<h4 class="panel-title">
+														Descripcion Vestibular
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="olfativoo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="olfativo">
+												<div class="panel-body">
+													{{ form.descripcion_olfativo}}
+												</div>
 											</div>
 										</div>
 									</div>
@@ -150,10 +388,61 @@
 								<div class="tab-pane" id="avd">
 									<h6>Alimentacion</h6>
 									{{ form.alimentacion}}
+									<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="ali">
+												<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#alii" aria-expanded="false" aria-controls="collapseTwo">
+													<h4 class="panel-title">
+														Descripcion Alimentacion
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="alii" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ali">
+												<div class="panel-body">
+													{{ form.descripcion_alimentacion}}
+												</div>
+											</div>
+										</div>
+
+
 									<h6>Higiene</h6>
 									{{ form.higiene}}
+									<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="hig">
+												<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#higg" aria-expanded="false" aria-controls="collapseTwo">
+													<h4 class="panel-title">
+														Descripcion Higiene
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="higg" class="panel-collapse collapse" role="tabpanel" aria-labelledby="hig">
+												<div class="panel-body">
+													{{ form.descripcion_higiene}}
+												</div>
+											</div>
+										</div>
+
+
 									<h6>Vestido</h6>
 									{{ form.vestido}}
+									<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="ves">
+												<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#vess" aria-expanded="false" aria-controls="collapseTwo">
+													<h4 class="panel-title">
+														Descripcion Vestido
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="vess" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ves">
+												<div class="panel-body">
+													{{ form.descripcion_vestido}}
+												</div>
+											</div>
+										</div>
+
+
 									<h6>Descanso y sueño</h6>
 									{{ form.descanso}}
 									<h6>Educacion</h6>

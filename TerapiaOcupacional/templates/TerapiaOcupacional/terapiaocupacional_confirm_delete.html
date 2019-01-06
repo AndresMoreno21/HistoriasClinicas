@@ -1,9 +1,45 @@
 {% extends 'baseAdmin.html' %}
 
-{% block maincontent %}
-    <form action="" method="post">{% csrf_token %}
-        <p>Desea Borrar La historia de Terapia Ocupacional  de {{ object.paciente }}?</p>
-        <input type="submit" value="Confirmar" />
-        <a class='btn' href="{% url 'terapia-lista' %}">Cancelar</a>
-    </form>
-{% endblock maincontent %}
+{% block content %}
+<form action=""method="post">{% csrf_token %}
+    
+    {% if object.pacienteAdulto%}
+    <div class="modal-dialog modal-small ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+            </div>
+            <div class="modal-body text-center">
+                <h5>¿Esta seguro que desea eliminar el paciente? </h5><br>
+                <h5>Identificacion: <strong>{{ object.pacienteAdulto.identificacion }}</strong></h5>
+                <h5>Nombre: {{object.pacienteAdulto.primer_nombre}}</h5>
+                <h5>Apellido: {{object.pacienteAdulto.primer_apellido}}</h5>
+            </div>
+            <div class="modal-footer text-center">
+                <input  class="btn btn-danger btn-simple" type="submit" value="Aceptar" />
+                <a href="{% url 'terapia-lista' %}" class="btn btn-success btn-simple">Cancelar</a>
+            </div>
+        </div>
+    </div>
+    {% elif object.pacienteNiño%}
+   <div class="modal-dialog modal-small ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+            </div>
+            <div class="modal-body text-center">
+                <h5>¿Esta seguro que desea eliminar el paciente? </h5><br>
+                <h5>Identificacion: <strong>{{ object.pacienteNiño.identificacion }}</strong></h5>
+                <h5>Nombre: {{object.pacienteNiño.primer_nombre}}</h5>
+                <h5>Apellido: {{object.pacienteNiño.primer_apellido}}</h5>
+            </div>
+            <div class="modal-footer text-center">
+                <input  class="btn btn-danger btn-simple" type="submit" value="Aceptar" />
+                <a href="{% url 'terapia-lista' %}" class="btn btn-success btn-simple">Cancelar</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    
+</form>
+{% endblock content %}
