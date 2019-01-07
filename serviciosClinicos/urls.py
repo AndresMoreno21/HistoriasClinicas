@@ -51,7 +51,7 @@ urlpatterns = [
     path('serviciosClinicos/',include('TerapiaOcupacional.urls')),
 
 
-    path('admin/', admin.site.urls),
+    path('AdminSupremo1542/', admin.site.urls),
     
    
 ]
