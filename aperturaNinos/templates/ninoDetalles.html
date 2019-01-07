@@ -74,136 +74,200 @@
 						<div class="col-md-8">
 							<div class="tab-content">
 								<div class="tab-pane active" id="datos">
-									<h6>Tipo de identificacion</h6>
-									{{ form.tipo_identificacion}}
 									
-									<h6>identificacion</h6>
-									{{ form.identificacion}}
-									
-									<h6>primer nombre</h6>
-									{{ form.primer_nombre}}
-									
-									<h6>segundo nombre</h6>
-									{{ form.segundo_nombre}}
-									
-									<h6>primer apellido</h6>
-									{{ form.primer_apellido}}
-									
-									<h6>segundo apellido</h6>
-									{{ form.segundo_apellido}}
-									
-									<h6>Sexo</h6>
-									{{ form.sexo}}
-									
-									<h6>Lugar de nacimiento</h6>
-									{{ form.lugar_nacimiento}}
-									
-									<h6>telefono</h6>
-									{{ form.telefono}}
-									
-									<h6>direccion</h6>
-									{{ form.direccion}}
-									
-									<h6>correo</h6>
-									{{ form.correo}}
-									
-									<h6>eps</h6>
-									{{ form.eps}}
-									
-									<h6>Fecha de ingreso</h6>
-									{{ form.fecha_ingreso}}
-									
-									<h6>nivel educativo</h6>
-									{{ form.nivel_educativo}}
-									
-									<h6>institucion educativa</h6>
-									{{ form.institucion_educativa}}
-									
-									<h6>primer nombre Madre</h6>
-									{{ form.primer_nombre_madre}}
-									
-									<h6>segundo nombre madre</h6>
-									{{ form.segundo_nombre_madre}}
-									
-									<h6>primer apellido madre</h6>
-									{{ form.primer_apellido_madre}}
-									
-									<h6>segundo apellido madre</h6>
-									{{ form.segundo_apellido_madre}}
-									
-									<h6>Fecha de nacimiento del madre</h6>
-									{{ form.fecha_nacimiento_madre}}
-									
-									<h6>Ocupacion Madre</h6>
-									{{ form.ocupacion_madre}}
-									
-									
-									<h6>primer nombre Padre</h6>
-									{{ form.primer_nombre_padre}}
-									
-									<h6>segundo nombre Padre</h6>
-									{{ form.segundo_nombre_padre}}
-									
-									<h6>primer apellido Padre</h6>
-									{{ form.primer_apellido_padre}}
-									
-									<h6>segundo apellido Padre</h6>
-									{{ form.segundo_apellido_padre}}
-									
-									<h6>Fecha de nacimiento del Padre</h6>
-									{{ form.fecha_nacimiento_padre}}
-									
-									<h6>Ocupacion Padre</h6>
-									{{ form.ocupacion_padre}}
-									
-									
-									<h6>Servicio solicitado</h6>
-									{{ form.servicio_solicitado}}
-									
-									<h6>Remitido Por</h6>
-									{{ form.remitido_por}}
-                                    
-									<h6>Diagnostico principal</h6>
-									{{ form.diagnostico_principal}}
-                                    
-									<h6>Diagnositco secundario</h6>
-									{{ form.diagnostico_secundario}}
-									
-									<h6>Motivo de la consulta</h6>
-									{{ form.motivo_consulta}}
-								</div>
-								
-								<div class="tab-pane" id="hc">
-									<div class="form-group label-floating">
-										<div class="panel-heading" role="tab" id="headingOne">
-											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#socio" aria-expanded="true" aria-controls="collapseOne">
-												<h4 class="panel-title">
-													Antecedentes de embarazo
-													<i class="material-icons">keyboard_arrow_down</i>
-												</h4>
-											</a>
+									<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="headingOne">
+												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+													<h4 class="panel-title">
+														Datos Personales
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+												<div class="panel-body">
+													
+													<h6>Identificacion</h6>
+													{{ form.identificacion}}
+													
+													<h6>Tipo de identificacion</h6>
+													{{ form.tipo_identificacion}}
+													
+													<h6>Primer nombre</h6>
+													{{ form.primer_nombre}}
+													
+													<h6>Segundo nombre</h6>
+													{{ form.segundo_nombre}}
+													
+													<h6>Primer apellido</h6>
+													{{ form.primer_apellido}}
+													
+													<h6>Segundo apellido</h6>
+													{{ form.segundo_apellido}}
+													
+													<h6>Sexo</h6>
+													{{ form.sexo}}
+													
+													<h6>Lugar de nacimiento</h6>
+													{{ form.lugar_nacimiento}}
+													
+													<h6>EPS</h6>
+													{{ form.eps}}
+													
+													<h6>nivel educativo</h6>
+													{{ form.nivel_educativo}}
+													
+													<h6>institucion educativa</h6>
+													{{ form.institucion_educativa}}
+												</div>
+											</div>
 										</div>
-										<div id="socio" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-											<div class="panel-body">
-												{{ form.antecedentes_embarazo|as_crispy_field}}
-												<h6>Causa de hospitalizacion</h6>
-												{{ form.causa_hospitalizacion}}
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="headingTwo">
+												<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+													<h4 class="panel-title">
+														Datos de Contacto
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+												<div class="panel-body">
+													<h6>Telefono</h6>
+													{{ form.telefono}}
+													
+													<h6>Direccion</h6>
+													{{ form.direccion}}
+													
+													<h6>Correo</h6>
+													{{ form.correo}}
+													
+												</div>
+											</div>
+										</div>
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="headingThreee">
+												<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThreeee" aria-expanded="false" aria-controls="collapseThree">
+													<h4 class="panel-title">
+														Datos de Familia
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="collapseThreeee" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThreee">
+												<div class="panel-body">
+													<h6>primer nombre Madre</h6>
+													{{ form.primer_nombre_madre}}
+													
+													<h6>segundo nombre madre</h6>
+													{{ form.segundo_nombre_madre}}
+													
+													<h6>primer apellido madre</h6>
+													{{ form.primer_apellido_madre}}
+													
+													<h6>segundo apellido madre</h6>
+													{{ form.segundo_apellido_madre}}
+													
+													<h6>Fecha de nacimiento del madre</h6>
+													{{ form.fecha_nacimiento_madre}}
+													
+													<h6>Ocupacion Madre</h6>
+													{{ form.ocupacion_madre}}
+													
+													
+													<h6>primer nombre Padre</h6>
+													{{ form.primer_nombre_padre}}
+													
+													<h6>segundo nombre Padre</h6>
+													{{ form.segundo_nombre_padre}}
+													
+													<h6>primer apellido Padre</h6>
+													{{ form.primer_apellido_padre}}
+													
+													<h6>segundo apellido Padre</h6>
+													{{ form.segundo_apellido_padre}}
+													
+													<h6>Fecha de nacimiento del Padre</h6>
+													{{ form.fecha_nacimiento_padre}}
+													
+													<h6>Ocupacion Padre</h6>
+													{{ form.ocupacion_padre}}
+												</div>
+											</div>
+										</div>
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="headingThree">
+												<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+													<h4 class="panel-title">
+														Datos de Servicio
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+												<div class="panel-body">
+													<h6>Fecha de ingreso</h6>
+													{{ form.fecha_ingreso}}
+													
+													<h6>Servicio solicitado</h6>
+													{{ form.servicio_solicitado}}
+													
+													<h6>Remitido Por</h6>
+													{{ form.remitido_por}}
+													
+													<h6>Diagnostico principal</h6>
+													{{ form.diagnostico_principal}}
+													
+													<h6>Diagnositco secundario</h6>
+													{{ form.diagnostico_secundario}}
+													
+													<h6>Motivo de la consulta</h6>
+													{{ form.motivo_consulta}}
+												</div>
 											</div>
 										</div>
 									</div>
-									<div class="form-group label-floating">
-										<div class="panel-heading" role="tab" id="headingOne">
-											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#parto" aria-expanded="true" aria-controls="collapseOne">
-												<h4 class="panel-title">
-													Parto
-													<i class="material-icons">keyboard_arrow_down</i>
-												</h4>
-											</a>
+									
+								</div>
+								
+								<div class="tab-pane" id="hc">
+									
+									<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="headingOne">
+												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#socio" aria-expanded="false" aria-controls="collapseOne">
+													<h4 class="panel-title">
+														Antecedentes de embarazo
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="socio" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+												<div class="panel-body">
+													{{ form.antecedentes_embarazo|as_crispy_field}}
+													<h6>Causa de hospitalizacion</h6>
+													{{ form.causa_hospitalizacion}}
+												</div>
+											</div>
 										</div>
-										<div id="parto" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-											<div class="panel-body">
-												{{ form.parto|as_crispy_field}}
-												
+									</div>
+									
+									<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="headingOne">
+												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#parto" aria-expanded="false" aria-controls="collapseOne">
+													<h4 class="panel-title">
+														Parto
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="parto" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+												<div class="panel-body">
+													{{ form.parto|as_crispy_field}}
+													
+												</div>
 											</div>
 										</div>
 									</div>
@@ -212,80 +276,89 @@
 								</div>
 								
 								<div class="tab-pane" id="hd">
-									<div class="form-group label-floating">
-										<div class="panel-heading" role="tab" id="headingOne">
-											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#motor" aria-expanded="true" aria-controls="collapseOne">
-												<h4 class="panel-title">
-													Motor
-													<i class="material-icons">keyboard_arrow_down</i>
-												</h4>
-											</a>
-										</div>
-										<div id="motor" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-											<div class="panel-body">
-												<h6>Edad en la que sostuvo la cabeza</h6>
-												{{ form.sostuvo_la_cabeza}}
-												
-												<h6>Edad en la que camino sin apoyo</h6>
-												{{ form.camino_sin_apoyo}}
-												
-												<h6>Edad en la que se sento solo</h6>
-												{{ form.se_sento_solo}}
-												
-												<h6>Edad en la que gateo</h6>
-												{{ form.gateo}}
-												
+									
+									<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="headingOne">
+												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#motor" aria-expanded="false" aria-controls="collapseOne">
+													<h4 class="panel-title">
+														Motor
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="motor" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+												<div class="panel-body">
+													<h6>Edad en la que sostuvo la cabeza</h6>
+													{{ form.sostuvo_la_cabeza}}
+													
+													<h6>Edad en la que camino sin apoyo</h6>
+													{{ form.camino_sin_apoyo}}
+													
+													<h6>Edad en la que se sento solo</h6>
+													{{ form.se_sento_solo}}
+													
+													<h6>Edad en la que gateo</h6>
+													{{ form.gateo}}
+													
+												</div>
 											</div>
 										</div>
+										
 									</div>
 									
-									<div class="form-group label-floating">
-										<div class="panel-heading" role="tab" id="headingOne">
-											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#lengua" aria-expanded="true" aria-controls="collapseOne">
-												<h4 class="panel-title">
-													Lenguaje
-													<i class="material-icons">keyboard_arrow_down</i>
-												</h4>
-											</a>
-										</div>
-										<div id="lengua" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-											<div class="panel-body">
-												<h6>Edad en la que dijo las primeras palabras</h6>
-												{{ form.dijo_las_primeras_palabras}}
-												
-												<h6>Edad en la que dijo frases simples</h6>
-												{{ form.dijo_frases_simples}}
-												
-												<h6>Edad en la que se expreso sin errores fonoaudiologicos</h6>
-												{{ form.se_expreso_sin_errores_fonologicos}}
-												
-												<h6>Edad en la que inicio la lectoescritura</h6>
-												{{ form.inicio_lecto_escritura}}
-												
-												<h6>Frases con organizacion gramatical</h6>
-												{{ form.frases_gramaticales}}
-												
-												
-												
+									<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="headingOne">
+												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#lengua" aria-expanded="false" aria-controls="collapseOne">
+													<h4 class="panel-title">
+														Lenguaje
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="lengua" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
+												<div class="panel-body">
+													<h6>Edad en la que dijo las primeras palabras</h6>
+													{{ form.dijo_las_primeras_palabras}}
+													
+													<h6>Edad en la que dijo frases simples</h6>
+													{{ form.dijo_frases_simples}}
+													
+													<h6>Edad en la que se expreso sin errores fonoaudiologicos</h6>
+													{{ form.se_expreso_sin_errores_fonologicos}}
+													
+													<h6>Edad en la que inicio la lectoescritura</h6>
+													{{ form.inicio_lecto_escritura}}
+													
+													<h6>Frases con organizacion gramatical</h6>
+													{{ form.frases_gramaticales}}
+													
+													
+													
+												</div>
 											</div>
 										</div>
+										
 									</div>
 									
-									<div class="form-group label-floating">
-										<div class="panel-heading" role="tab" id="headingOne">
-											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#conducta" aria-expanded="true" aria-controls="collapseOne">
-												<h4 class="panel-title">
-													Conducta
-													<i class="material-icons">keyboard_arrow_down</i>
-												</h4>
-											</a>
-										</div>
-										<div id="conducta" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-											<div class="panel-body">
-												
-												{{ form.conducta|as_crispy_field}}
-												
-												
+									<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab" id="headingOne">
+												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#conducta" aria-expanded="false" aria-controls="collapseOne">
+													<h4 class="panel-title">
+														Conducta
+														<i class="material-icons">keyboard_arrow_down</i>
+													</h4>
+												</a>
+											</div>
+											<div id="conducta" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+												<div class="panel-body">
+													
+													{{ form.conducta|as_crispy_field}}
+													
+													
+												</div>
 											</div>
 										</div>
 									</div>
@@ -293,21 +366,9 @@
 								
 								<div class="tab-pane" id="hm">
 									<div class="form-group label-floating">
-										<div class="panel-heading" role="tab" id="headingOne">
-											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#medica" aria-expanded="true" aria-controls="collapseOne">
-												<h4 class="panel-title">
-													Historia Medica
-													<i class="material-icons">keyboard_arrow_down</i>
-												</h4>
-											</a>
-										</div>
-										<div id="medica" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-											<div class="panel-body">
-												{{ form.historia_medica|as_crispy_field}}
-												
-												
-											</div>
-										</div>
+										
+										{{ form.historia_medica|as_crispy_field}}
+										
 									</div>
 									<h6>Medicamentos</h6>
 									{{ form.medicamentos}}
@@ -315,41 +376,17 @@
 								
 								<div class="tab-pane" id="he">
 									<div class="form-group label-floating">
-										<div class="panel-heading" role="tab" id="headingOne">
-											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#escolar" aria-expanded="true" aria-controls="collapseOne">
-												<h4 class="panel-title">
-													Historia Escolar
-													<i class="material-icons">keyboard_arrow_down</i>
-												</h4>
-											</a>
-										</div>
-										<div id="escolar" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-											<div class="panel-body">
-												{{ form.historia_escolar|as_crispy_field}}
-												
-											</div>
-										</div>
+										
+										{{ form.historia_escolar|as_crispy_field}}
+										
 									</div>
 								</div>
 								
+								
 								<div class="tab-pane" id="hs">
 									<div class="form-group label-floating">
-										<div class="panel-heading" role="tab" id="headingOne">
-											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#familiar" aria-expanded="true" aria-controls="collapseOne">
-												<h4 class="panel-title">
-													Historia Sociofamiliar
-													<i class="material-icons">keyboard_arrow_down</i>
-												</h4>
-											</a>
-										</div>
-										<div id="familiar" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-											<div class="panel-body">
-												{{ form.historia_socio_familiar|as_crispy_field}}
-												
-												
-												
-											</div>
-										</div>
+										
+										{{ form.historia_socio_familiar|as_crispy_field}}
 										
 									</div>
 									<h6>Descripcion del problema</h6>
@@ -362,10 +399,11 @@
 					</div>
 				</div>
 			</div>
-            <button type="submit" class="btn btn-success">Enviar</button>
-            <a href="{% url 'nino-lista' %}" class="btn btn-danger">Cancelar</a>
+			<button type="submit" class="btn btn-success">Enviar</button>
+			<a href="{% url 'nino-lista' %}" class="btn btn-danger">Cancelar</a>
 		</div>
 	</div>
-    
+	
 </form>
+
 {% endblock content%}
